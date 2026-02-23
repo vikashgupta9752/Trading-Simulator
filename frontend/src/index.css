@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    --color-groww-primary: #3B82F6;
+    --color-groww-green: #22D3EE;
+    --color-groww-red: #F472B6;
+    --color-groww-blue: #6366F1;
+    --color-groww-dark: #F8FAFC;
+    --color-groww-gray: #94A3B8;
+    --color-groww-light: #0F1020;
+    --color-groww-card: #1A1B2E;
+}
+
+:root {
+    --color-bg-main: #0F1020;
+    /* Matching groww-light */
+    --color-bg-card: #1A1B2E;
+    /* Matching groww-card */
+    --color-text-primary: #F8FAFC;
+    /* Matching groww-dark */
+    --color-text-secondary: #94A3B8;
+    --color-accent-green: #22D3EE;
+    --color-accent-red: #F472B6;
+    --color-accent-blue: #3B82F6;
+    --color-border: #1e2c45;
+}
+
+body {
+    background-color: var(--color-bg-main);
+    color: var(--color-text-primary);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2c3e50;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #34495e;
+}
+
+/* Custom Utilities for Tailwind config mapping if needed, 
+   but we will largely rely on Tailwind classes extended in config */
+
+/* Trading Buttons */
+.btn-trade-call {
+    background: linear-gradient(180deg, #2ecc71 0%, #27ae60 100%);
+    box-shadow: 0 4px 0 #219150;
+    transition: all 0.1s;
+}
+
+.btn-trade-call:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #219150;
+}
+
+.btn-trade-put {
+    background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%);
+    box-shadow: 0 4px 0 #962d22;
+    transition: all 0.1s;
+}
+
+.btn-trade-put:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #962d22;
+}
+
+/* Custom Animations */
+@keyframes scroll-x {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scroll-x {
+    animation: scroll-x 30s linear infinite;
+    display: flex;
+    width: max-content;
+}
+
+.pause-animation:hover {
+    animation-play-state: paused;
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+}
+
+/* Grid Backgrounds */
+.bg-grid-white\/\[0\.02\] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='white' stroke-opacity='0.02'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+}
+
+.bg-grid-white\/\[0\.01\] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='white' stroke-opacity='0.01'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+}
